@@ -1,8 +1,7 @@
 import { schema, CustomMessages } from "@ioc:Adonis/Core/Validator";
-import { DateTime } from "luxon"; // Import DateTime from 'luxon'
 import type { HttpContextContract } from "@ioc:Adonis/Core/HttpContext";
 
-export default class TaskValidator {
+export default class ActivityValidator {
   constructor(protected ctx: HttpContextContract) {}
 
   /*
@@ -25,8 +24,9 @@ export default class TaskValidator {
    *    ```
    */
   public schema = schema.create({
-    name: schema.string(),
+    description: schema.string(),
     deadline_at: schema.date.optional(),
+    task_id: schema.number(),
   });
 
   /**
@@ -40,5 +40,7 @@ export default class TaskValidator {
    * }
    *
    */
+
+  p;
   public messages: CustomMessages = {};
 }

@@ -5,10 +5,10 @@ export default class extends BaseSchema {
 
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments("id").primary();
+      table.increments("id");
+      table.string("description").nullable();
       table.bigInteger("debit").nullable();
       table.bigInteger("credit").nullable();
-      table.string("description").nullable();
       table.timestamps(true, true);
     });
   }

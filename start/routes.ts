@@ -20,6 +20,7 @@
 
 import Route from "@ioc:Adonis/Core/Route";
 
-Route.get("/tasks", "TasksController.index");
-Route.post("/tasks/create", "TasksController.store");
-Route.delete("/tasks/:id", "TasksController.destroy");
+Route.group(() => {
+  Route.resource("/task", "TaskController").apiOnly();
+  Route.resource("/activity", "ActivityController").apiOnly();
+}).prefix("/api/v1/");
