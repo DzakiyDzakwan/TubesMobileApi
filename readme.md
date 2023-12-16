@@ -25,10 +25,21 @@ Untuk instalasi pastikan terlebih dahulu bahwa kalian sudah memiliki **`node js 
   ```bash
   npm installl
   ```
-- 1.4. Jalankan api
+- 1.4. Ubah file `.env.example` menjadi `.env`
+- 1.5. Buat sebuah database baru dengan nama `tubes-mobile-api`
+- 1.6. Jalankan migration
   ```bash
-  node ace serve --watch
+  node ace migration:run
   ```
+- 1.7. Jalankan seeder
+  ```bash
+  node ace db:seed
+  ```
+- 1.8. Jalankan server api
+  ```bash
+  node ace serve
+  ```
+- 1.8. API sudah bisa digunakan
 
 ## 2. Modul Pengelolaan Tugas
 
